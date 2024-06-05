@@ -1,0 +1,248 @@
+/*============================= Announcement Style Start =============================*/
+
+.app-announcements{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.app-announcements h3{
+    flex-basis: 100%;
+    margin:0px 0px 15px 0px;
+}
+
+.app-announcements-latest{
+    height: 24px;
+    min-width: 24px;
+    line-height: 0;
+    border-radius: 6px;
+    cursor: default;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    white-space: nowrap;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-transform: capitalize;
+    padding: 0px 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    -webkit-transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: #118D57;
+    background-color: rgba(34, 197, 94, 0.16);
+}
+
+.app-announcements-date{
+    line-height: 0;
+    border-radius: 6px;
+    cursor: default;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    white-space: nowrap;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-transform: capitalize;
+    padding: 0px 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.app-announcements p{
+    min-height: 95px;
+}
+
+.css-gi540u{
+    margin-bottom: 20px !important;
+}
+
+.app-announcements hr{
+    border: 1px solid #f2f4f5;
+    width: 100%;
+    display: block;
+}
+/*============================= Announcement Style End =============================*/
+
+/*============================= Birthdays Style Start =============================*/
+
+.UpcomingBirthdays .MuiCardHeader-root{
+    background: url(https://kayadevelopmentserver.com/minimal-app-images/upcoming-birthday-header-bg.png) 30px 15px no-repeat;
+    background-size: 7%;
+    padding: 24px;
+    margin: 0px;
+}
+
+.UpcomingBirthdays .MuiCardHeader-root span{
+    padding-left: 65px;
+}
+
+/*============================= Birthdays Style End =============================*/
+
+/*============================= Anniversaries Style Start =============================*/
+
+.UpcomingAnniversaries .MuiCardHeader-root{
+    background: url(https://kayadevelopmentserver.com/minimal-app-images/upcoming-anniversaries-header-bg.png) 30px 15px no-repeat;
+    background-size: 7%;
+    padding: 24px;
+    margin: 0px;
+}
+
+.UpcomingAnniversaries .MuiCardHeader-root span{
+    padding-left: 65px;
+}
+
+/*============================= Anniversaries Style End =============================*/
+
+/*============================= Quick Access Style Start =============================*/
+
+div.Quick-access {
+    display: flex;
+    justify-content: space-between;
+	flex-wrap: wrap;
+	box-shadow: 0 0 5px #ccc;
+    border-radius: 20px;
+    padding: 20px;
+	margin-bottom: 30px;
+
+    background-color: #FFFFFF;
+    color: #212B36;
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 8px;
+    box-shadow: none;
+    background-image: none;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 2px 0 rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12);
+    border-radius: 16px;
+    z-index: 0;
+}
+div.Quick-access h3{
+    width: 100%;
+}
+div.quick-access-wrap {
+    text-align: center;
+
+}
+
+div.quick-access-wrap img {
+    background: #f4f6f8;
+    border-radius: 10px;
+	padding:15px;
+	width: 82px;
+}
+
+/*============================= Quick Access Style End =============================*/
+
+/*============================= Upcoming Retreats Style Start =============================*/
+
+div.retreats-main {
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 20px;
+    padding: 20px;
+}
+div.retreats-wrap {
+    display: flex;
+}
+div.retreats-content h3 {
+    margin-top: 0;
+	margin-bottom: 10px;
+}
+div.retreats-inner-text {
+    display: flex;
+}
+div.retreats-img {
+    margin-right: 20px;
+}
+div.retreats-inner-text img {
+    margin-right: 10px;
+}
+
+div.retreats-main hr{
+    border: 1px solid #f2f4f5;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/*============================= Upcoming Retreats Style End =============================*/
+
+/*============================= Top Selling Products Style Start =============================*/
+div.top-selling {
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+div.header{
+	display:flex;
+	align-items: center;
+}
+div.tsm-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.tsm-prod-img{
+margin-right: 10px;	
+}
+
+div.header-img{
+	flex-basis:10%;
+	margin-right: 10px;
+}
+
+div.tsm-product{
+	margin-bottom:21px;
+	
+}
+
+div.header-img img {
+	width: 100%;
+}
+
+div.tsm-upper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.tsm-upper h4, div.tsm-upper p{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+div.prod-stats{
+	margin-right:10px;
+	
+}
+div.prod-stats span{
+	margin-left: 5px;
+	color: slategrey;	
+}
+
+/*============================= Top Selling Products Style End =============================*/

@@ -1,0 +1,144 @@
+/* scrollbar */
+@import 'simplebar-react/dist/simplebar.min.css';
+
+/* lazy image */
+@import 'react-lazy-load-image-component/src/effects/blur.css';
+
+/* map */
+@import 'mapbox-gl/dist/mapbox-gl.css';
+
+/* editor */
+@import 'react-quill/dist/quill.snow.css';
+
+/* carousel */
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+/* lightbox */
+@import 'yet-another-react-lightbox/styles.css';
+@import 'yet-another-react-lightbox/plugins/captions.css';
+@import 'yet-another-react-lightbox/plugins/thumbnails.css';
+
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-react-layouts/styles/material.css';
+
+* {
+  list-style: none;
+}
+
+.e-dashboardlayout.e-control .e-panel {
+  background-color: transparent !important;
+}
+
+.redColor {
+  background-color: red;
+}
+
+.e-panel-container {
+  height: 100% !important;
+}
+.e-panel-container img {
+  object-fit: cover;
+  height: 100% !important;
+}
+
+.redParent {
+  height: 25rem !important;
+  width: 32rem !important;
+}
+
+.blueColor {
+  background-color: blue;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.cassette {
+  cursor: move;
+}
+
+.icons {
+  cursor: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #212b36;
+  padding: 0.5rem;
+}
+
+.icons img {
+  cursor: pointer;
+  width: 15px;
+  margin-bottom: 0.2rem;
+}
+
+.icons .right > img {
+  margin-left: 1rem;
+}
+
+
+.upload_image{
+  border: 4px dashed rgb(33, 184, 136);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 19rem;
+  height: 19rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.boxCenter{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  flex-direction: column;
+  transform: translate(-50%);
+
+}
+.uploadImageText{
+
+  text-align: center;
+  color: #21B888;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  cursor: pointer;
+}
+
+.flexbox{
+
+  display: flex;
+  gap: 0.3rem;
+}
+
+.NextButton{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.box {
+  padding: 0.1rem;
+  border: 2px solid transparent; /* Default border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.activeBox {
+  border: 3px solid rgb(33, 184, 136);
+}
+
+.marginTop{
+
+  margin-top: 2rem;
+}
