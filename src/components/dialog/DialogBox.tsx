@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
-import ImageUploadDialog from './ImageUploadDialog';
+import axios from 'axios';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -44,22 +44,68 @@ export default function DialogBox() {
   const [activeBox, setActiveBox] = useState<string | null>(null);
   const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
   const [isNextButtonActive, setIsNextButtonActive] = useState(false);
-  const [image , setImage] = useState()
+  const [data, setData] = useState<any[]>([]);
 
+  useEffect(() => {
+    const savedData = localStorage.getItem('userUploadedData');
+    if (savedData) {
+      setData(JSON.parse(savedData));
+    }
+  }, []);
 
-  const handleFirstClickOpen = () => setOpenFirst(true);
-  const handleFirstClose = () => setOpenFirst(false)
-  const handleSecondClickOpen = () => setOpenSecond(true)
-  const handleSecondClose = () => setOpenSecond(false);
-  const handleBoxClick = (boxName: string) => setActiveBox(boxName);
+  const handleFirstClickOpen = () => {
+    setOpenFirst(true);
+  };
+
+  const handleFirstClose = () => {
+    setOpenFirst(false);
+  };
+
+  const handleSecondClickOpen = () => {
+    setOpenSecond(true);
+  };
+
+  const handleSecondClose = () => {
+    setOpenSecond(false);
+  };
+
+  const handleBoxClick = (boxName: string) => {
+    setActiveBox(boxName);
+  };
+
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const handleUploadClick = () => fileInputRef.current?.click()
 
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
 
-  const handleFileInputChange = async() => {
+  const handleFileInputChange = async (e) => {
+    const photo = e.target.files[0];
+
+    const formData = new FormData();
+
+    formData.append('photo', photo);
+
     const files = fileInputRef.current?.files;
 
     if (files && files.length > 0) {
+      try {
+        const response = await axios.post('http://localhost:5000/api/auth/user/image', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+
+        if (response) {
+          console.log('Image uploaded successfully');
+
+          setIsNextButtonActive(true);
+        } else {
+          console.error('Failed to upload image');
+        }
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      }
 
       setIsNextButtonActive(true);
     } else {
@@ -77,8 +123,14 @@ export default function DialogBox() {
     const newData = selectedFiles.map((file) => ({
       id: generateUniqueId(),
       imageUrl: file.url, // Store image URL
-      size: 1 // Store size name
+      size: 1, // Store size name
     }));
+
+    const updatedData = [...data, ...newData];
+
+    localStorage.setItem('userUploadedData', JSON.stringify(updatedData));
+
+    setData(updatedData);
 
     // Close the first dialog
     handleFirstClose();
@@ -88,12 +140,12 @@ export default function DialogBox() {
 
   // Unique ID banane ke liye function
   const generateUniqueId = (): string => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0,
-          v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0,
+        v = c == 'x' ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
-  }
+  };
 
   return (
     <>
@@ -202,15 +254,12 @@ export default function DialogBox() {
           <DialogContentWrapper>
             <div onClick={handleUploadClick} style={{ cursor: 'pointer', textAlign: 'center' }}>
               <Image src={'/assets/upload.svg'} alt="upload image" width={200} height={100} />
-              <form>
               <input
                 type="file"
                 ref={fileInputRef}
-                name='photo'
                 style={{ display: 'none' }}
                 onChange={handleFileInputChange}
               />
-              </form>
               <p className="uploadImageText" style={{ marginTop: '10px' }}>
                 Upload an image
               </p>
@@ -227,8 +276,6 @@ export default function DialogBox() {
           </DialogContentWrapper>
         </DialogContent>
       </BootstrapDialog>
-
-      <ImageUploadDialog/>
     </>
   );
 }

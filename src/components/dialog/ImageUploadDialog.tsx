@@ -1,11 +1,25 @@
-
+import { useState } from "react";
 
 const ImageUploadDialog = () => {
 
+  const [file, setFile] = useState();
+
+  const fileUpload = (e)=>{
+
+        e.preventDefault()
+
+  }
+
   return (
+    <div>
 
-    <div>ImageUploadDialog</div>
-  )
-}
+        <form onSubmit={fileUpload}>
+          <input type="file" name="photo" onChange={(e)=> setFile(e.target.value)} />
+          <button type="submit">submit</button>
+        </form>
 
-export default ImageUploadDialog
+    </div>
+  );
+};
+
+export default ImageUploadDialog;
