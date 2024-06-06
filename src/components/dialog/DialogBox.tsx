@@ -258,6 +258,7 @@ export default function DialogBox() {
                 type="file"
                 ref={fileInputRef}
                 style={{ display: 'none' }}
+                name="photo"
                 onChange={handleFileInputChange}
               />
               <p className="uploadImageText" style={{ marginTop: '10px' }}>

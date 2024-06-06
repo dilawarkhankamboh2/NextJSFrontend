@@ -5,11 +5,13 @@ import { DashboardLayoutComponent } from '@syncfusion/ej2-react-layouts';
 import { registerLicense } from '@syncfusion/ej2-base';
 import debounce from 'lodash/debounce';
 import DialogBox from 'src/components/dialog/DialogBox';
+import axios from 'axios';
 
 registerLicense('Ngo9BigBOggjHTQxAR8/V1NBaF1cWWhPYVJ/WmFZfVpgdVVMYVxbRHVPMyBoS35RckVmW39fcXRSR2ReUEV0');
 
 function HealthWellness() {
 
+  const [data, setdata] = useState();
   const [images, setImages] = useState<{ id: number; imageUrl: string; size: number }[]>([
 
     { id: 1, imageUrl: '/assets/images/about/vision.jpg', size: 4 },
@@ -19,6 +21,15 @@ function HealthWellness() {
     { id: 5, imageUrl: '/assets/images/about/vision.jpg', size: 1 },
     { id: 6, imageUrl: '/assets/images/about/vision.jpg', size: 1 },
   ]);
+    useEffect(()=>{
+     const allImages = async ()=>{
+      const res = await axios.get("http://localhost:5000/api/all/image");
+      setdata(res.data);
+
+     }
+     allImages()
+
+    },[])
 
   const layoutRef = useRef<DashboardLayoutComponent>(null);
   const [dragging, setDragging] = useState<boolean>(false);
