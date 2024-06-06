@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
+import ImageUploadDialog from './ImageUploadDialog';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -226,6 +227,8 @@ export default function DialogBox() {
           </DialogContentWrapper>
         </DialogContent>
       </BootstrapDialog>
+
+      <ImageUploadDialog/>
     </>
   );
 }
